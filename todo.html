@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban To-Do App</title>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="todo.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Arjiya khatri</div>
+    <ul class="nav-links">
+    
+      <li><button id="theme-toggle"> Theme</button></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Kanban To-Do App</h1>
+  </header>
+
+  <div class="board">
+    <!-- To-Do Column -->
+    <div class="column" id="todo">
+      <h2>To-Do</h2>
+      <div class="task-list"></div>
+      <button class="add-task-btn" onclick="openTaskModal('todo')">
+        <i class="fas fa-plus"></i> Add Task
+      </button>
+    </div>
+
+    <!-- In-Progress Column -->
+    <div class="column" id="in-progress">
+      <h2>In-Progress</h2>
+      <div class="task-list"></div>
+      <button class="add-task-btn" onclick="openTaskModal('in-progress')">
+        <i class="fas fa-plus"></i> Add Task
+      </button>
+    </div>
+
+    <!-- Done Column -->
+    <div class="column" id="done">
+      <h2>Done</h2>
+      <div class="task-list"></div>
+      <button class="add-task-btn" onclick="openTaskModal('done')">
+        <i class="fas fa-plus"></i> Add Task
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="task-modal">
+    <form id="task-form">
+      <h3>Add/Edit Task</h3>
+      <input id="task-title" type="text" placeholder="Task Title" required />
+      <textarea id="task-desc" placeholder="Task Description"></textarea>
+      <button type="submit">Save Task</button>
+      <button type="button" onclick="closeTaskModal()">Cancel</button>
+    </form>
+  </div>
+
+  <script src="todo.js"></script>
+</body>
+</html>
